@@ -1,17 +1,19 @@
-package com.example.deafable;
+package com.example.deafable.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.deafable.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] mobileArray = {"Splash Screen","Onboarding"};
+    String[] mobileArray = {"onboarding","login"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, mobileArray[i], Toast.LENGTH_SHORT).show();
+                switch (i) {
+                    case 0:
+                        Intent myIntent = new Intent(MainActivity.this, OnboardingActivity.class);
+//                        myIntent.putExtra("key", value); //Optional parameters
+                        MainActivity.this.startActivity(myIntent);
+                }
             }
         });
     }
