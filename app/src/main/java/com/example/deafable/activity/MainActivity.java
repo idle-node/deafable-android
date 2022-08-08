@@ -13,14 +13,14 @@ import com.example.deafable.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] mobileArray = {"onboarding","login"};
+    String[] pages = {"onboarding","login", "signup", "home", "voicehelp", "railways", "stationdetail", "trainschedule", "guideme", "search", "facility", "profil", "changepassword"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.activity_listview, mobileArray);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.activity_listview, pages);
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
@@ -28,14 +28,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent myIntent;
-                switch (i) {
-                    case 0:
+                switch (pages[i]) {
+                    case "onboarding":
                         myIntent = new Intent(MainActivity.this, OnboardingActivity.class);
                         MainActivity.this.startActivity(myIntent);
                         break;
-                    case 1:
+                    case "login":
                         myIntent = new Intent(MainActivity.this, LoginActivity.class);
                         MainActivity.this.startActivity(myIntent);
+                        break;
+                    case "signup":
+                        // TODO
+                        break;
+                    case "home":
+                        break;
+                    case "voicehelp":
                         break;
                 }
             }
