@@ -27,11 +27,16 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent myIntent;
                 switch (i) {
                     case 0:
-                        Intent myIntent = new Intent(MainActivity.this, OnboardingActivity.class);
-//                        myIntent.putExtra("key", value); //Optional parameters
+                        myIntent = new Intent(MainActivity.this, OnboardingActivity.class);
                         MainActivity.this.startActivity(myIntent);
+                        break;
+                    case 1:
+                        myIntent = new Intent(MainActivity.this, LoginActivity.class);
+                        MainActivity.this.startActivity(myIntent);
+                        break;
                 }
             }
         });
