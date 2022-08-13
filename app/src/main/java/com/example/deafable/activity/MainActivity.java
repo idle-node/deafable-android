@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.startActivity(myIntent);
                         break;
                     case "signup":
-                        // TODO
+                        myIntent = new Intent(MainActivity.this, SignupActivity.class);
+                        MainActivity.this.startActivity(myIntent);
                         break;
                     case "home":
                         break;
