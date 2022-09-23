@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.speech.tts.Voice;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,10 +15,17 @@ public class BridgeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bridge);
-        Button button = (Button) findViewById(R.id.bantuanbutton);
+        Button button = (Button) findViewById(R.id.bantuanbtn);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(BridgeActivity.this, VoiceHelpActivity.class));
+            }
+        });
+
+        Button btn = (Button) findViewById(R.id.deafablebtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(BridgeActivity.this, LoginActivity.class));
             }
         });
     }
