@@ -28,22 +28,22 @@ public class OnboardingActivity extends AppCompatActivity {
     private MyViewPagerAdapter myViewPagerAdapter;
     private Button btnNext;
     private String about_title_array[] = {
-            "Ready to Travel",
-            "Pick the Ticket",
-            "Flight to Destination",
-            "Enjoy Holiday"
+            "Lacak Posisi Anda",
+            "Kemudahan Berkomunikasi",
+            "Gabung Segala Informasi",
+            "Petunjuk Arah Jalan"
     };
     private String about_description_array[] = {
-            "Choose your destination, plan Your trip. Pick the best place for Your holiday",
-            "Select the day, pick Your ticket. We give you the best prices. We guarantee!",
-            "Safe and Comfort flight is our priority. Professional crew and services.",
-            "Enjoy your holiday, Dont forget to feel the moment and take a photo!",
+            "Memberikan kemudahan anda untuk melacak posisi anda dimanapun dan kapanpun anda berada",
+            "Kini anda dapat menyapa orang lain tanpa batasan, membuat hari-hari anda lebih mudah dan menyenangkan",
+            "Sajian informasi seputar KRL yang lengkap tanpa harus ketinggalan informasi penting lainnya",
+            "Kini perjalanan anda akan terasa lebih menyenangkan karena adanya petunjuk jalan ke stasiun tujuan",
     };
     private int about_images_array[] = {
-            R.drawable.img_wizard_1,
-            R.drawable.img_wizard_2,
-            R.drawable.img_wizard_3,
-            R.drawable.img_wizard_4
+            R.drawable.tourist,
+            R.drawable.calling,
+            R.drawable.bookshelf,
+            R.drawable.elevator
     };
 
     @Override
@@ -156,7 +156,7 @@ public class OnboardingActivity extends AppCompatActivity {
             View view = layoutInflater.inflate(R.layout.item_stepper_wizard, container, false);
             ((TextView) view.findViewById(R.id.title)).setText(about_title_array[position]);
             ((TextView) view.findViewById(R.id.description)).setText(about_description_array[position]);
-            ((ImageView) view.findViewById(R.id.image)).setImageResource(about_images_array[position]);
+            (view.findViewById(R.id.lyt_parent)).setBackgroundResource(about_images_array[position]);
             container.addView(view);
 
             return view;

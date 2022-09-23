@@ -14,13 +14,17 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".activity.MainActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,8 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.OnboardingActivity"/>
+        <activity android:name=".activity.OnboardingActivity" />
     </application>
 
 </manifest>

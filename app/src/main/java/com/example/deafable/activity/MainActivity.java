@@ -13,7 +13,7 @@ import com.example.deafable.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] pages = {"onboarding","login", "signup", "home", "voicehelp", "railways", "stationdetail", "trainschedule", "guideme", "search", "facility", "profil", "changepassword"};
+    String[] pages = {"splashscreen","onboarding","login", "signup", "home", "voicehelp", "railways", "stationdetail", "trainschedule", "guideme", "search", "facility", "profil", "changepassword"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent myIntent;
                 switch (pages[i]) {
+                    case "splashscreen":
+                        myIntent = new Intent(MainActivity.this, SplashScreenActivity.class);
+                        MainActivity.this.startActivity(myIntent);
+                        break;
                     case "onboarding":
                         myIntent = new Intent(MainActivity.this, OnboardingActivity.class);
                         MainActivity.this.startActivity(myIntent);
