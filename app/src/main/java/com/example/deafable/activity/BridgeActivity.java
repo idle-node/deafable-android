@@ -15,18 +15,21 @@ public class BridgeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bridge);
-        Button button = (Button) findViewById(R.id.bantuanbtn);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        Button btnLogin = (Button) findViewById(R.id.deafablebtn);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(BridgeActivity.this, LoginActivity.class));
+            }
+        });
+
+        Button btnVoiceHelp = (Button) findViewById(R.id.bantuanbtn);
+        btnVoiceHelp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(BridgeActivity.this, VoiceHelpActivity.class));
             }
         });
 
-        Button btn = (Button) findViewById(R.id.deafablebtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(BridgeActivity.this, LoginActivity.class));
-            }
-        });
+
     }
 }
