@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/beranda"
+        android:title="Beranda"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/bantuansuara"
+        android:title="BantuanSuara"
+        android:icon="@drawable/microphone"/>
+    <item
+        android:id="@+id/jalurkereta"
+        android:title="Jalur Kereta"
+        android:icon="@drawable/train_2"/>
+
+</menu>
