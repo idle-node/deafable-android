@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.startActivity(myIntent);
                         break;
                     case "home":
+                        myIntent = new Intent(MainActivity.this, HomeActivity.class);
+                        MainActivity.this.startActivity(myIntent);
                         break;
                     case "voicehelp":
                         myIntent = new Intent(MainActivity.this, VoiceHelpActivity.class);

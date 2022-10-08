@@ -1,11 +1,10 @@
 package com.example.deafable.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.deafable.R;
 
@@ -16,20 +15,11 @@ public class BridgeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bridge);
 
-        Button btnLogin = (Button) findViewById(R.id.deafablebtn);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(BridgeActivity.this, LoginActivity.class));
-            }
-        });
+        Button btnLogin = (Button) findViewById(R.id.deafablebtn); //tombol login di bridge
+        btnLogin.setOnClickListener(v -> startActivity(new Intent(BridgeActivity.this, LoginActivity.class)));
 
-        Button btnVoiceHelp = (Button) findViewById(R.id.bantuanbtn);
-        btnVoiceHelp.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(BridgeActivity.this, VoiceHelpActivity.class));
-            }
-        });
-
+        Button btnVoiceHelp = (Button) findViewById(R.id.bantuanbtn); //tombol bantuan suara di bridge
+        btnVoiceHelp.setOnClickListener(v -> startActivity(new Intent(BridgeActivity.this, VoiceHelpActivity.class)));
 
     }
 }
