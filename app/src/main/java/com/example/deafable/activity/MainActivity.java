@@ -13,7 +13,7 @@ import com.example.deafable.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] pages = {"splashscreen","onboarding","bridge","login", "signup", "home", "voicehelp", "railways", "stationdetail", "trainschedule", "guideme", "search", "facility", "profil", "changepassword"};
+    String[] pages = {"phonenumber", "splashscreen","onboarding","bridge","login", "signup", "home", "voicehelp", "railways", "stationdetail", "trainschedule", "guideme", "search", "facility", "profil", "changepassword"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "voicehelp":
                         myIntent = new Intent(MainActivity.this, VoiceHelpActivity.class);
+                        MainActivity.this.startActivity(myIntent);
+                        break;
+                    case "phonenumber":
+                        myIntent = new Intent(MainActivity.this, phonenumberActivity.class);
                         MainActivity.this.startActivity(myIntent);
                         break;
                 }

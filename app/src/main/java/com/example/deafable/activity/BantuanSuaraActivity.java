@@ -10,17 +10,20 @@ import android.view.MenuItem;
 import com.example.deafable.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class BantuanSuaraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_bantuan_suara);
 
+        // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.beranda);
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.bantuansuara);
 
+        // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -28,10 +31,10 @@ public class HomeActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.beranda:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.bantuansuara:
-                        startActivity(new Intent(getApplicationContext(),BantuanSuaraActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.jalurkereta:
                         startActivity(new Intent(getApplicationContext(),JalurKeretaActivity.class));

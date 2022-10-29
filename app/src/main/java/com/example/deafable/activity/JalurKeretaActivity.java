@@ -10,16 +10,16 @@ import android.view.MenuItem;
 import com.example.deafable.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class JalurKeretaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_jalur_kereta);
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.beranda);
+        bottomNavigationView.setSelectedItemId(R.id.jalurkereta);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -28,14 +28,14 @@ public class HomeActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.beranda:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.bantuansuara:
                         startActivity(new Intent(getApplicationContext(),BantuanSuaraActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.jalurkereta:
-                        startActivity(new Intent(getApplicationContext(),JalurKeretaActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
